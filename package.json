@@ -1,7 +1,7 @@
 {
     "name": "argocd-gh-action",
     "description": "GitHub Action to refresh and sync ArgoCD applications",
-    "author": "Diego Pereira Grassato <diegograssato@gmail.com>",
+    "author": "Diego Pereira Grassato <diego.grassato@gmail.com>",
     "version": "1.0.0",
     "main": "index.js",
     "license": "MIT",

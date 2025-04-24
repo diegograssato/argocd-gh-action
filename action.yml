@@ -1,37 +1,42 @@
-name: "ArgoCD Sync API"
-description: "GitHub Action para sincronizar múltiplas aplicações ArgoCD via API"
+name: '🚀 ArgoCD GitHub Action'
+description: '🔄 Sincronize e atualize aplicações do ArgoCD diretamente com GitHub Actions'
+author: 'Diego Pereira Grassato <diego.grassato@gmail.com>'
+branding:
+  icon: 'cloud'
+  color: 'blue'
+
 inputs:
   argocd_server:
     required: true
-    description: "URL do servidor ArgoCD (ex: https://argo.example.com)"
+    description: "🌐 URL do servidor ArgoCD (ex: https://argo.example.com)"
   argocd_token:
     required: false
-    description: "Token de autenticação JWT (opcional, substitui username e password)"    
+    description: "🔐 Token de autenticação JWT (opcional, substitui username e password)"    
   argocd_username:
     required: false
-    description: "Nome de usuário ArgoCD"
+    description: "👤 Nome de usuário do ArgoCD (necessário se não usar token)"
   argocd_password:
     required: false
-    description: "Senha do usuário ArgoCD"
+    description: "🔑 Senha do ArgoCD (necessária se não usar token)"
   argocd_applications:
     required: true
-    description: "Lista de aplicações separadas por vírgula (ex: app1,app2)"
+    description: "📦 Lista separada por vírgulas das aplicações a sincronizar (ex: app1,app2)"
   refresh:
     required: false
     default: "false"
-    description: "Se deve forçar refresh da aplicação"
+    description: "🔄 Executar refresh antes do sync? (true/false)"
   sync:
     required: true
     default: "true"
-    description: "Se deve sincronizar a aplicação"
+    description: "✅ Executar sync? (true/false)"
   insecure:
     required: false
     default: "false"
-    description: "Ignora verificação TLS (use com cuidado)"
+    description: "⚠️ Ignorar certificados TLS inválidos? (true/false)"
   prune:
     required: false
     default: "false"
-    description: "Remove recursos que não estão mais definidos (prune)"    
+    description: "🗑️ Remove recursos que não estão mais definidos (prune)"    
 runs:
   using: "node16"
   main: "index.js"
