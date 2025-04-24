@@ -1,0 +1,31 @@
+{
+    "name": "argocd-gh-action",
+    "description": "GitHub Action to refresh and sync ArgoCD applications",
+    "author": "Diego Pereira Grassato <diegograssato@gmail.com>",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "homepage": "https://github.com/diegograssato/argocd-gh-action.git",
+    "bugs": {
+        "url": "https://github.com/diegograssato/argocd-gh-action/issues"
+    },
+    "scripts": {
+        "test:debug": "NODE_ENV=debug node src/index.js",
+        "test": "npm run test:debug",
+        "debug": "npm run test:debug"
+      },
+    "keywords": [
+        "github",
+        "action",
+        "argocd",
+        "sync",
+        "refresh",
+        "rollout",
+        "rollback"
+      ],
+    "dependencies": {
+      "@actions/core": "^1.11.1",
+      "axios": "^1.8.4",
+       "https": "^1.0.0"
+    }
+  }

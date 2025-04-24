@@ -1,0 +1,37 @@
+name: "ArgoCD Sync API"
+description: "GitHub Action para sincronizar múltiplas aplicações ArgoCD via API"
+inputs:
+  argocd_server:
+    required: true
+    description: "URL do servidor ArgoCD (ex: https://argo.example.com)"
+  argocd_token:
+    required: false
+    description: "Token de autenticação JWT (opcional, substitui username e password)"    
+  argocd_username:
+    required: false
+    description: "Nome de usuário ArgoCD"
+  argocd_password:
+    required: false
+    description: "Senha do usuário ArgoCD"
+  argocd_applications:
+    required: true
+    description: "Lista de aplicações separadas por vírgula (ex: app1,app2)"
+  refresh:
+    required: false
+    default: "false"
+    description: "Se deve forçar refresh da aplicação"
+  sync:
+    required: true
+    default: "true"
+    description: "Se deve sincronizar a aplicação"
+  insecure:
+    required: false
+    default: "false"
+    description: "Ignora verificação TLS (use com cuidado)"
+  prune:
+    required: false
+    default: "false"
+    description: "Remove recursos que não estão mais definidos (prune)"    
+runs:
+  using: "node16"
+  main: "index.js"
