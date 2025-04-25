@@ -10,10 +10,11 @@
         "url": "https://github.com/diegograssato/argocd-gh-action/issues"
     },
     "scripts": {
-        "test:debug": "NODE_ENV=debug node src/index.js",
+        "build": "ncc build src/index.js -o dist",
+        "test:debug": "NODE_ENV=debug node dist/index.js",
         "test": "npm run test:debug",
         "debug": "npm run test:debug"
-      },
+    },
     "keywords": [
         "github",
         "action",
@@ -22,10 +23,13 @@
         "refresh",
         "rollout",
         "rollback"
-      ],
+    ],
     "dependencies": {
-      "@actions/core": "^1.11.1",
-      "axios": "^1.8.4",
-       "https": "^1.0.0"
+        "@actions/core": "^1.11.1",
+        "axios": "^1.8.4",
+        "https": "^1.0.0"
+    },
+    "devDependencies": {
+        "@vercel/ncc": "^0.38.3"
     }
-  }
+}
